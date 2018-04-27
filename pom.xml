@@ -16,7 +16,7 @@
     <!--</modules>-->
     <packaging>pom</packaging>
 
-    <name>test</name>
+    <name>javaMultiThreadCoreTach</name>
     <url>http://maven.apache.org</url>
 
     <properties>
