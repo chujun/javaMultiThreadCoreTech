@@ -27,5 +27,20 @@ public class ThreadSafeThread extends Thread {
         a.start();
         b.start();
         c.start();
+        //        由A计算.count=4
+        //        由A计算.count=3
+        //        由A计算.count=2
+        //        由A计算.count=1
+        //        由A计算.count=0
+        //        由B计算.count=4
+        //        由B计算.count=3
+        //        由B计算.count=2
+        //        由B计算.count=1
+        //        由B计算.count=0
+        //        由C计算.count=4
+        //        由C计算.count=3
+        //        由C计算.count=2
+        //        由C计算.count=1
+        //        由C计算.count=0
     }
 }
