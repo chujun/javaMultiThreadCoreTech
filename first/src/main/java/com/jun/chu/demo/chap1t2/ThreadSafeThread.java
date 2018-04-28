@@ -19,4 +19,13 @@ public class ThreadSafeThread extends Thread {
             System.out.println("由" + currentThread().getName() + "计算.count=" + count);
         }
     }
+
+    public static void main(String[] args) {
+        ThreadSafeThread a = new ThreadSafeThread("A");
+        ThreadSafeThread b = new ThreadSafeThread("B");
+        ThreadSafeThread c = new ThreadSafeThread("C");
+        a.start();
+        b.start();
+        c.start();
+    }
 }
