@@ -1,4 +1,4 @@
-package com.jun.chu.demo.chap1t2;
+package com.jun.chu.demo.chap1.chap1t2;
 
 /**
  * Created by chujun on 2018/4/28.

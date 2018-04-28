@@ -1,6 +1,5 @@
-package com.jun.chu.demo.createThread.chap1t2;
+package com.jun.chu.demo.chap1.chap1t2;
 
-import com.jun.chu.demo.chap1t2.My2Thread;
 import org.junit.Test;
 
 /**
