@@ -8,6 +8,11 @@ public class IsAlive2Thread extends Thread {
         printInfo("IsAlive2Thread constructor");
     }
 
+    public IsAlive2Thread(String name) {
+        setName(name);
+        printInfo("IsAlive2Thread constructor");
+    }
+
     private void printInfo(String method) {
         System.out.println(method + " -- begin");
         System.out.println("Thread.currentThread().getName() : " + Thread.currentThread().getName());
@@ -24,7 +29,7 @@ public class IsAlive2Thread extends Thread {
     }
 
     public static void main(String[] args) {
-        IsAlive2Thread isAlive2Thread = new IsAlive2Thread();
+        IsAlive2Thread isAlive2Thread = new IsAlive2Thread("IsAlive2Thread");
         Thread thread = new Thread(isAlive2Thread);
         System.out.println("main begin thread.isAlive():" + thread.isAlive());
         thread.setName("A");
@@ -43,7 +48,7 @@ public class IsAlive2Thread extends Thread {
         //        Thread.currentThread().getName() : A
         //        Thread.currentThread().isAlive(): true
         //        this.getName():Thread-0
-        //TODO:cj 这一步run方法中this.isAlive():仍然返回false,不太理解
+        //TODO:重点 这一步run方法中this.isAlive():仍然返回false,不太理解(从Thread.currentThread()可知当前正在运行的线程是A,而非子线程IsAlive2Thread,所以run方法中这个值返回false)
         //        this.isAlive():false
         //        run -- end
     }
