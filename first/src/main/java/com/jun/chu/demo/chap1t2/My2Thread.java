@@ -3,15 +3,17 @@ package com.jun.chu.demo.chap1t2;
 /**
  * Created by chujun on 2018/4/28.
  */
-public class MyThread extends Thread {
+public class My2Thread extends Thread {
     private int count = 5;
 
-    public MyThread() {
+    public My2Thread() {
+        this(null);
     }
 
-    public MyThread(String name) {
+    public My2Thread(String name) {
         super(name);
         this.setName(name);
+        System.out.println("构造方法的打印:Thread.currentThread().getName() = " + Thread.currentThread().getName());
     }
 
     @Override
@@ -21,12 +23,13 @@ public class MyThread extends Thread {
             count--;
             System.out.println("由" + currentThread().getName() + "计算.count=" + count);
         }
+        System.out.println("run方法的打印:Thread.currentThread().getName() = " + Thread.currentThread().getName());
     }
 
     public static void main(String[] args) {
-        MyThread a = new MyThread("A1");
-        MyThread b = new MyThread("B1");
-        MyThread c = new MyThread("C1");
+        My2Thread a = new My2Thread("A1");
+        My2Thread b = new My2Thread("B1");
+        My2Thread c = new My2Thread("C1");
         a.start();
         b.start();
         c.start();
@@ -48,7 +51,7 @@ public class MyThread extends Thread {
 
         System.out.println("多线程公用同一个线程,线程不安全,开始");
 
-        MyThread myThread = new MyThread();
+        My2Thread myThread = new My2Thread();
         //公用同一个线程
         Thread a2 = new Thread(myThread, "A2");
         Thread b2 = new Thread(myThread, "B2");
